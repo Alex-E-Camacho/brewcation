@@ -1,10 +1,10 @@
 get '/breweries' do
   zip = params[:postalCode]
   # binding.pry
-  p request = URI.parse("http://api.brewerydb.com/v2/locations/?postalCode=#{zip}&#{ENV['BREWERY_DB_KEY']}").read
+  request = URI.parse("https://api.brewerydb.com/v2/locations/?postalCode=#{zip}&key=#{ENV['BREWERY_DB_KEY']}")
   # binding.pry
   response = Net::HTTP.get_response(request)
-  @results = JSON.parse(response)
+  @results = JSON.parse(response.body)
   erb :show
 end
 
