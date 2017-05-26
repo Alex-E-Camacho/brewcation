@@ -17,7 +17,7 @@ gem 'shotgun', '~>0.9.1'
 gem 'bcrypt'
 gem 'pry'
 
-gem "octokit", "~> 4.0"
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'
