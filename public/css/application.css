@@ -1,0 +1,16 @@
+.site-title {
+  font-family: 'Bungee Outline', cursive;
+  font-size: 550%;
+};
+
+body {
+background-color: #fff099;
+};
+
+.user-header {
+  background-color: #E6E6FA;
+};
+
+#results-list {
+  align: center;
+}

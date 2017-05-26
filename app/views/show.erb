@@ -1,1 +1,20 @@
-<%=@results%>
+<ul id="results-list">
+<% if @results %>
+    <% @results["data"].each do |result| %>
+    <h3 class="brewery-title"><%= result["name"] %></h3>
+    <ul>
+     <div class="address">
+       <label for="address"><h4>Address:</h4></label>
+       <p class="address"><%= result["streetAddress"] %></p>
+       <p class="address"><%= result["locality"] %></p>
+       <p class="address"><%= result["region"] %></p>
+       <p class="address"><%= result["postalCode"] %></p>
+     </div>
+     <div class="description">
+       <label for="description"><h4>About:</h4></label>
+       <p class="description"><%= result["brewery"]["description"] %></p>
+     </div>
+    </ul>
+  <% end %>
+<% end %>
+</ul>

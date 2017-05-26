@@ -11,24 +11,26 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Outline|Poiret+One" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title>Brewcation</title>
 </head>
 <body>
-  <h1>Brewcation</h1>
-  <div align="right">
-    <% if logged_in? %>
-        <a href="/users/<%=current_user.id%>"><%=current_user.username.capitalize%></a> |
-        <a href="/logout">Logout</a> |
-    <% else %>
-        <a href="/login">Login</a> |
-        <a href="/users/new">Register</a> |
-    <% end %>
-        <a href="/">Homepage</a>
-  </div>
+  <div class="user-header">
+    <h1 class="site-title">Brewcation</h1>
+    <div>
+      <% if logged_in? %>
+          <a href="/users/<%=current_user.id%>"><%=current_user.username.capitalize%></a> |
+          <a href="/logout">Logout</a> |
+      <% else %>
+          <a href="/login" class="header">Login</a> |
+          <a href="/users/new" class="header">Register</a> |
+      <% end %>
+          <a href="/" class="header">Homepage</a>
+    </div>
+</div>
   <%= yield %>
 </body>
 </html>
